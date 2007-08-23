@@ -1,0 +1,108 @@
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/id3lib-3.8.3/Makefile.am src/id3lib-3.8.3/Makefile.am
+--- origsrc/id3lib-3.8.3/Makefile.am	2003-03-01 18:23:00.000000000 -0600
++++ src/id3lib-3.8.3/Makefile.am	2007-08-23 09:59:05.987369000 -0500
+@@ -12,6 +12,8 @@
+ # require automake 1.5
+ AUTOMAKE_OPTIONS = 1.5
+ 
++ACLOCAL_AMFLAGS = -I m4
++
+ EXTRA_DIST =                    \
+         HISTORY                 \
+         config.h.win32          \
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/id3lib-3.8.3/doc/Doxyfile.in src/id3lib-3.8.3/doc/Doxyfile.in
+--- origsrc/id3lib-3.8.3/doc/Doxyfile.in	2003-03-01 18:23:00.000000000 -0600
++++ src/id3lib-3.8.3/doc/Doxyfile.in	2007-08-23 11:15:10.656615900 -0500
+@@ -261,18 +261,8 @@
+ # directories like "/usr/src/myproject". Separate the files or directories 
+ # with spaces. 
+ 
+-INPUT                  = ../src \
+-                         ../include/id3/field.h \
+-                         ../include/id3/frame.h \
+-                         ../include/id3/globals.h \
+-                         ../include/id3/misc_support.h \
+-                         ../include/id3/reader.h \
+-                         ../include/id3/readers.h \
+-                         ../include/id3/sized_types.h \
+-                         ../include/id3/tag.h \
+-                         ../include/id3/tag.h \
+-                         ../include/id3/writer.h \
+-                         ../include/id3/writers.h
++INPUT                  = @top_srcdir@/src \
++                         @top_srcdir@/include/id3
+ 
+ 
+ # If the value of the INPUT tag contains directories, you can use the 
+@@ -305,7 +295,7 @@
+ # directories that contain example code fragments that are included (see 
+ # the \include command). 
+ 
+-EXAMPLE_PATH           = ../examples
++EXAMPLE_PATH           = @top_srcdir@/examples
+ 
+ # If the value of the EXAMPLE_PATH tag contains directories, you can use the 
+ # EXAMPLE_PATTERNS tag to specify one or more wildcard pattern (like *.cpp 
+@@ -386,7 +376,7 @@
+ # fine-tune the look of the HTML output. If the tag is left blank doxygen 
+ # will generate a default style sheet 
+ 
+-HTML_STYLESHEET        = id3lib.css
++HTML_STYLESHEET        = @srcdir@/id3lib.css
+ 
+ # If the HTML_ALIGN_MEMBERS tag is set to YES, the members of classes, 
+ # files or namespaces will be aligned in HTML using tables. If set to 
+@@ -414,7 +404,7 @@
+ # If the GENERATE_LATEX tag is set to YES (the default) Doxygen will 
+ # generate Latex output. 
+ 
+-GENERATE_LATEX         = NO
++GENERATE_LATEX         = YES
+ 
+ # The LATEX_OUTPUT tag is used to specify where the LaTeX docs will be put. 
+ # If a relative path is entered the value of OUTPUT_DIRECTORY will be 
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/id3lib-3.8.3/doc/Makefile.am src/id3lib-3.8.3/doc/Makefile.am
+--- origsrc/id3lib-3.8.3/doc/Makefile.am	2003-03-01 18:23:00.000000000 -0600
++++ src/id3lib-3.8.3/doc/Makefile.am	2007-08-23 10:51:48.975947200 -0500
+@@ -38,11 +38,11 @@
+ 
+ dox: Doxyfile
+ 	-rm -rf @DOX_DIR_HTML@ @DOX_DIR_LATEX@
+-	cd $(srcdir) && doxygen Doxyfile
++	doxygen Doxyfile
+ 
+ docs: dox index.html id3lib.css
+ 	-rm -rf $(docsdistdir).*
+-	cd $(srcdir)/@DOX_DIR_LATEX@ && \
++	cd @DOX_DIR_LATEX@ && \
+ 	make pdf && \
+ 	(cp *.pdf ../$(docsdistdir).pdf || true) && \
+ 	cp *.ps ../$(docsdistdir).ps && \
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/id3lib-3.8.3/src/Makefile.am src/id3lib-3.8.3/src/Makefile.am
+--- origsrc/id3lib-3.8.3/src/Makefile.am	2003-03-01 18:23:00.000000000 -0600
++++ src/id3lib-3.8.3/src/Makefile.am	2007-08-23 10:18:34.909371600 -0500
+@@ -13,8 +13,10 @@
+ 
+ if ID3_NEEDZLIB
+ zlib_include = -I$(top_srcdir)/zlib/include
++zlib_lib     = $(top_builddir)/zlib/src/libz.la
+ else
+ zlib_include = 
++zlib_lib     = -lz
+ endif
+ 
+ INCLUDES = \
+@@ -72,11 +74,10 @@
+ 
+ libid3_la_SOURCES = $(id3lib_sources)
+ 
+-if ID3_NEEDZLIB
+-LDADD        = $(top_builddir)/zlib/src/libz.la
+-endif
++libid3_la_LIBADD = $(zlib_lib)
+ 
+ libid3_la_LDFLAGS = \
++  -no-undefined \
+   -version-info $(LT_VERSION) \
+   -release $(LT_RELEASE) \
+   -export-dynamic
