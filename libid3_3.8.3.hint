@@ -1,6 +1,7 @@
 category: Audio
-requires: libid3_383
-sdesc: "Library for manipulating ID3v1/v1.1/v2 tags (utilities)"
+requires: libgcc1 libiconv2 libstdc++6 zlib0
+external-source: id3lib
+sdesc: "Library for manipulating ID3v1/v1.1/v2 tags (runtime)"
 ldesc: "id3lib is a software library for manipulating ID3v1/v1.1 and
 ID3v2 tags. id3lib 3.0.x conforms to all ID3v2 standards up to and
 including the ID3v2.3.0 informal standard."
